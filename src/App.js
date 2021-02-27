@@ -77,27 +77,27 @@ export default function App() {
   //   setNotes(notes.filter((note) => note.tag === filteredTag));
   // };
 
-  const handleTagFilter = (filteredTag) => {
-    console.log("filter", filteredTag);
-    setNotes(
-      JSON.parse(JSON.stringify(notes)).filter((note) => {
-        if (note.tag === filteredTag) {
-          return note;
-        }
-      })
-    );
-  };
-
   // const handleTagFilter = (filteredTag) => {
   //   console.log("filter", filteredTag);
   //   setNotes(
-  //     notes.filter((note) => {
+  //     JSON.parse(JSON.stringify(notes)).filter((note) => {
   //       if (note.tag === filteredTag) {
   //         return note;
   //       }
   //     })
   //   );
   // };
+
+  const handleTagFilter = (filteredTag) => {
+    console.log("filter", filteredTag);
+    setNotes(
+      notes.filter((note) => {
+        if (note.tag === filteredTag) {
+          return note;
+        }
+      })
+    );
+  };
 
   // const handleTagFilter = (filteredTag) => {
   //   console.log("filter", filteredTag);
@@ -123,8 +123,8 @@ export default function App() {
   //   );
   // };
 
-  // console.log(tags);
-  // console.log(notes);
+  console.log(tags);
+  console.log(notes);
 
   return (
     <div className="App">

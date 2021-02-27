@@ -61,7 +61,7 @@ export const AddNotes = ({ tags, colors, onAddNote, editNote }) => {
           placeholder="Add Note"
           type="text"
           onChange={(e) => setTitle(e.target.value)}
-        />
+        ></input>
         <br />
         <br />
         {
@@ -85,7 +85,12 @@ export const AddNotes = ({ tags, colors, onAddNote, editNote }) => {
                 >
                   {tags.map((tg) => {
                     return (
-                      <option key={tg} value={tg}>
+                      <option
+                        key={tg}
+                        // value={tg}
+                        value={editNote.tag ? editNote.tag : tg}
+                        selected={editNote.tag && editNote.tag}
+                      >
                         {tg}
                       </option>
                     );
